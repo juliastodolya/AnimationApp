@@ -26,15 +26,14 @@ class DataManager {
                       "wobble",
                       "swing"]
     
-     let curves = ["easeIn",
-                         "easeOut",
-                         "easeInOut",
-                         "linear",
-                         "spring",
-                         "easeInSine",
-                         "easeOutSine",
-                         "easeInOutSine",
-                         "easeInQuad",
-                         "easeOutQuad"]
-    
+    let curves = ["easeIn",
+                  "easeOut",
+                  "easeInOut",
+                  "linear",
+                  "spring",
+                  "easeInSine",
+                  "easeOutSine",
+                  "easeInOutSine",
+                  "easeInQuad",
+                  "easeOutQuad"]
 }

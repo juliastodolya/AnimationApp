@@ -11,7 +11,8 @@ import Spring
 class ViewController: UIViewController {
     
     let animations = Animation.getRandomAnimationList()
-    var index = 0
+    
+    private var index = 0
     
     @IBOutlet var springAnimationView: SpringView!
     @IBOutlet var nameAnimationLabel: UILabel!
@@ -19,16 +20,7 @@ class ViewController: UIViewController {
     
     @IBAction func startSpringAnimation(_ sender: SpringButton) {
         setNames()
-        springAnimationView.animation = animations[index].animation
-        springAnimationView.curve = animations[index].curve
-        springAnimationView.force = CGFloat(animations[index].forse)
-        if index == animations.count - 1 {
-            index = 0
-        } else {
-            index += 1
-        }
-       
-        springAnimationView.animate()
+        viewAnimate()
     }
     
     private func setNames() {
@@ -39,5 +31,15 @@ class ViewController: UIViewController {
         } else {
             startButton.setTitle("Next is: " + animations[index + 1].animation, for: .normal)
         }
+    }
+    
+    private func viewAnimate() {
+        springAnimationView.animation = animations[index].animation
+        springAnimationView.curve = animations[index].curve
+        springAnimationView.force = CGFloat(animations[index].forse)
+        
+        index = index == animations.count - 1 ? 0 : index + 1
+
+        springAnimationView.animate()
     }
 }
